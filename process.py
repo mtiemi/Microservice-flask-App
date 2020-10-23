@@ -7,8 +7,7 @@ import sys
 from io import BytesIO
 from reportlab.platypus import SimpleDocTemplate, Image
 from reportlab.lib.utils import ImageReader
-
-from audio_to_midi import audio2midi
+import audio2midi
 
 def getFileAndConvertPDF(file_upload):
     spf = wave.open(file_upload, "r")
