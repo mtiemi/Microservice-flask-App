@@ -31,19 +31,6 @@ def index():
 @app.route('/', methods=['POST'])
 def upload_file_convert():
     uploaded_file = request.files['file']
-    if uploaded_file.filename != '' and request.form['btn'] == "convertPDF":
-        uploaded_file.filename = uploaded_file.filename[:-4]
-        file_processed = process.getFileAndConvertPDF(uploaded_file)
-        
-        connection = sqlite3.connect('database.db')
-        cur = connection.cursor()
-
-        cur.execute("INSERT INTO files (title) VALUES (?)",
-                    (uploaded_file.filename,)) 
-        connection.commit()
-        connection.close()
-        
-        return send_file(file_processed, attachment_filename= uploaded_file.filename + '.pdf',as_attachment=True)
     if uploaded_file.filename != '' and request.form['btn'] == "convertMIDI":
         uploaded_file.filename = uploaded_file.filename[:-4]
         file_processed = process.getFileAndConvertMIDI(uploaded_file,  uploaded_file.filename + '.mid')
@@ -57,3 +44,6 @@ def upload_file_convert():
         connection.close()
         
         return send_file(file_processed, attachment_filename= uploaded_file.filename + '.mid',as_attachment=True)  
+
+if __name__ == 'main':
+    app.run(ssl_context='adhoc', host='0.0.0.0', port=51100, debug=True, threaded=True) 

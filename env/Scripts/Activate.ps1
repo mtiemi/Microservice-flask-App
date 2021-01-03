@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\maria_000\Desktop\TFC---2s-2020\env"
+$env:VIRTUAL_ENV="C:\Users\maria_000\Desktop\TFC_Final_Version\TFC---2s-2020\TFC---2s-2020\env"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

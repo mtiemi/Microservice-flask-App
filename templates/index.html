@@ -1,14 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    
     <h1>{% block title %} Welcome to Piano.Nics! {% endblock %}</h1>
     <hr>
     <h2>File Upload</h2>
     <form method="POST" enctype="multipart/form-data">
       <p><input type="file" name="file" accept=".wav"></p>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary" name="btn" value="convertPDF" >Convert to PDF</button>
         <button type="submit" class="btn btn-primary" name="btn"value="convertMIDI" >Convert to MIDI</button>
     </div>
+    <body>
+      <form action="?" method="POST">
+        <div class="g-recaptcha" data-sitekey="6LeJeB8aAAAAAMr27aI8yHkk-XycRtakq-DlZ5AL"></div>
+        <br/>
+        <input type="submit" value="Submit">
+      </form>
+    </body>
+
     </form>
+    
 {% endblock %}

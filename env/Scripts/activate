@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\maria_000\Desktop\TFC---2s-2020\env"
+VIRTUAL_ENV="C:\Users\maria_000\Desktop\TFC_Final_Version\TFC---2s-2020\TFC---2s-2020\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
