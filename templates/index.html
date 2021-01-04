@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-    <h1>{% block title %} Welcome to Piano.Nics! {% endblock %}</h1>
+    <h1>{% block title %} Piano NICS - UNICAMP {% endblock %}</h1>
     <hr>
-    <h2>File Upload</h2>
-    <form method="POST" enctype="multipart/form-data">
-      <p><input type="file" name="file" accept=".wav"></p>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" name="btn"value="convertMIDI" >Convert to MIDI</button>
-    </div>
-    <body>
-      <form action="?" method="POST">
-        <div class="g-recaptcha" data-sitekey="6LeJeB8aAAAAAMr27aI8yHkk-XycRtakq-DlZ5AL"></div>
-        <br/>
-        <input type="submit" value="Submit">
-      </form>
-    </body>
+    <h2>Choose a wav to convert to midi</h2>
 
+    <form id="formFile" method="POST" enctype="multipart/form-data">
+      <div class="custom-file">
+        <input id="fileInput" class="custom-file-input" type="file" name="file" accept=".wav" onchange="checkFile()">
+        <label class="custom-file-label" for="customFile">Choose a wav file</label>
+      </div>
+
+      <div class="text-xs-center">
+        <div class="g-recaptcha" data-sitekey="6LeJeB8aAAAAAMr27aI8yHkk-XycRtakq-DlZ5AL"></div>
+      </div>
+
+      <div class="form-group">
+        <button id="buttonConvert" type="submit" class="btn btn-primary" name="btn" value="convertMIDI" onclick="loadingFile()" disabled>Convert to MIDI</button>
+      </div>
     </form>
+
+    <script>
+      function checkFile(){
+        if($('input[type=file]').val().length == 0){
+            $('button').attr('disabled', true)
+        } else{
+          $('button').attr('disabled', false);
+          var fileName = $('input[type=file]').val().split("\\").pop();
+          $('input[type=file]').siblings(".custom-file-label").addClass("selected").html(fileName);
+        }
+      }
+      </script>
     
 {% endblock %}
