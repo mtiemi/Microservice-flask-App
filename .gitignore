@@ -1,6 +1,7 @@
-Microservice-flask-App/__pycache__/*
-Microservice-flask-App/Lib/*
-Microservice-flask-App/venv/*
-Microservice-flask-App/Scripts/*
-Microservice-flask-App/logging.log
-Microservice-flask-App/pyvenv.cfg
+__pycache__/*
+Lib/*
+venv/*
+Scripts/*
+logging.log
+pyvenv.cfg
+.vscode/*
