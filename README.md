@@ -1,2 +1,5 @@
-# TFC---2s-2020
-Trabalho Final de Curso  - 2s/2020 UNICAMP
+# Microservice Flask App 
+Final year project - 2s/2020 - Unicamp/FEEC
+Author: Mariane Tiemi Iguti
+
+
